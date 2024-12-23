@@ -64,7 +64,7 @@ def generate_response(messages: Dict) -> Generator:
         messages=messages,
         stream=True,
         options={
-            "temperature": 0.5
+            "temperature": 0.0
         }
     )
     for chunk in response:
@@ -106,7 +106,7 @@ def worker(question: str, n_steps: int = 5):
             else:
                 print(f"{Style.BRIGHT}{Fore.YELLOW}RESTARTING...{Style.RESET_ALL}")
 
-ques = "Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?"
+example_ques = "Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?"
 
 while True:
     ques = input(f"{Style.BRIGHT}{Fore.MAGENTA}Enter your question or type \\exit: {Style.RESET_ALL}")
